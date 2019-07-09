@@ -1,1 +1,4 @@
+var1 = "Natthakiat"
+var2 = "Natthakiat"
 
+print("MY NAME : Mr." , var1 , " ", var2)
