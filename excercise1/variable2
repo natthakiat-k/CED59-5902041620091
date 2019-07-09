@@ -1,1 +1,4 @@
+num1 = 1
+num2 = 16
 
+print("NUMBER : ", num1 * num2)
