@@ -40,5 +40,5 @@ if typing in sign:
     cal.div()
 else:
   print()
-  print("ERROR!...Please check operator agian!")
+  print("ERROR!...Please check operator again!")
   print()
