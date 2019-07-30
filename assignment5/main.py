@@ -1,5 +1,3 @@
-
-
 while True:
   print("============= Welcome to Calculator =============")
   select = input("[sign up/sign in] > ")
