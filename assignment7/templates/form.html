@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>Form</title>
+    <style>
+        input {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #e5e5e5;
+        }
+        p {
+            margin: 20px 0 0 0;
+        }
+        input[type=submit] {
+            padding: 10px 50px;
+            background-color: #e74c3c;
+            color: #fff;
+            transition: .4s;
+            margin: 20px;
+        }
+        input[type=submit]:hover {
+            background-color: red;
+        }
+        label.alert {
+            color: red;
+        }
+        .doc-head {
+            background-color: #333;
+            width: 300px;
+            height: 50px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .doc-body {
+            background-color: #f7f7f7;
+            width: 300px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding: 20px 0;
+        }
+        label.head {
+            color: #fff;
+            font-size: 16px;
+        }
+        label.head-2 {
+            color: #fff;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <form method="POST" action="{{ url_for('registor') }}">
+        <div class="flex-box">
+            <div class="doc-head">
+                <label class="head">Flask-WTF</label>
+                <label class="head-2">Natthakiat Khunkaew</label>
+            </div>
+            <div class="doc-body">
+            {{ form.csrf_token }}
+            <p>First Name : </p> {{ form.first_name}} <br>
+            <p>Last Name : </p> {{ form.last_name }} <br>
+            <p>Email : </p> {{ form.email }} <br>
+                {% for error in form.email.errors %}
+                   <label class="alert" >{{ error }}</label>
+               {% endfor %}
+            <p>Username : </p> {{ form.username }} <br>
+            <p>Password : </p> {{ form.password }} <br>
+               {% for error in form.password.errors %}
+                   <label class="alert">{{ error }}</label>
+               {% endfor %}
+            <br>
+            <input type="submit" value="Registor">
+            </div>
+        </div>
+    </form>
+</center>
+</body>
+</html>
